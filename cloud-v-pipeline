@@ -10,7 +10,7 @@ node('x86_runner1'){
     stage('Running llama.cpp'){
         sh'''#!/bin/bash
             module load gnu-bin2/0.1
-            qemu-riscv64 -L /softwares/gnu-bin2/sysroot  -cpu rv64,v=true,vlen=256,elen=64,vext_spec=v1.0 ./main -m ./ggml-model-q4.bin -p "Building a website can be done in 10 simple steps:" -n 9
+            qemu-riscv64 -L /softwares/gnu-bin2/sysroot  -cpu rv64,v=true,vlen=256,elen=64,vext_spec=v1.0 ./main -m /home/alitariq/ggml-model-q4.bin -p "Building a website can be done in 10 simple steps:" -n 9
         '''
     }
 }
