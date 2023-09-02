@@ -2703,6 +2703,7 @@ static void ggml_vec_dot_q4_0_q8_0(const int n, float * restrict s, const void *
 
         vint16m2_t vec_mul1 = __riscv_vwmul_vv_i16m2(v0, y0, vl);
         vint16m2_t vec_mul2 = __riscv_vwmul_vv_i16m2(v1, y1, vl);
+
         vint32m1_t vec_zero = __riscv_vmv_v_x_i32m1(0, vl);
 
         vint32m1_t vs1 = __riscv_vwredsum_vs_i16m2_i32m1(vec_mul1, vec_zero, vl);
